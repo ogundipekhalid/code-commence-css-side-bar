@@ -16,14 +16,18 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 120px;
+    width: 90px;
     background-color: #12171e;
     padding: 0.4rem 0.8rem;
     transition: all 0.5s ease;
 }
 
+.bold {
+    padding-left: 20px;
+}
+
 .sidebar.active {
-    width: 250px;
+    width: 150px;
 }
 
 .sidebar.active ~ .main-content {
@@ -77,4 +81,58 @@
 
 .main-content {
     transition: margin-left 0.5s ease;
+}
+
+/* Sidebar menu styling */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.sidebar ul li {
+    position: relative;
+    margin-bottom: 1.5rem; /* Add space between each list item */
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #1e90ff; /* Change to any hover color you like */
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    top: 100%; /* Position the tooltip directly below the link */
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 0.3rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.sidebar ul li:hover .tooltip {
+    opacity: 1; /* Show the tooltip on hover */
+}
+
+.sidebar ul li .tooltip::before {
+    content: '';
+    position: absolute;
+    top: -6px; /* Adjust to place the arrow closer to the tooltip */
+    left: 10px; /* Adjust to center the arrow */
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
 }
